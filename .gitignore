@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Node
+node_modules/
+
+# Berkas sementara Office
+~$*
+
+# Sistem operasi dan editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Naskah skripsi dan catatan pribadi (tidak diunggah)
+*.docx
+PANDUAN_AI*.md

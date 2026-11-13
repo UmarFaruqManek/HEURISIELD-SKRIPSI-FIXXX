@@ -1,0 +1,28 @@
+{
+  "feature_set": "url20-whatwg-v3",
+  "feature_count": 20,
+  "features": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "query_length",
+    "subdomain_count",
+    "path_depth",
+    "dot_count",
+    "hyphen_count",
+    "digit_ratio",
+    "special_char_count",
+    "has_at_symbol",
+    "has_ip_host",
+    "has_https_scheme",
+    "hostname_entropy",
+    "sensitive_token_count",
+    "url_entropy",
+    "path_hyphen_count",
+    "domain_label_length",
+    "hostname_longest_digit_run",
+    "hostname_sensitive_token_count"
+  ],
+  "threshold": 0.5,
+  "source_model_sha256": "8d87a5c05a6d478b0d62252d5bc180e9f67889059689c2f4c0bbf26ef476127e"
+}

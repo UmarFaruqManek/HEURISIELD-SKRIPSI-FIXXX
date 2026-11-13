@@ -1,0 +1,45 @@
+{
+ "keputusan_akhir": {
+  "TP": 123,
+  "FN": 35,
+  "FP": 55,
+  "TN": 437,
+  "akurasi": 86.15,
+  "presisi": 69.1,
+  "recall": 77.85,
+  "f1": 73.21,
+  "specificity": 88.82
+ },
+ "model_url_saja": {
+  "TP": 114,
+  "FN": 44,
+  "FP": 86,
+  "TN": 406,
+  "akurasi": 80.0,
+  "presisi": 57.0,
+  "recall": 72.15,
+  "f1": 63.69,
+  "specificity": 82.52
+ },
+ "sumber_keputusan": {
+  "legitimate|brand_dom_legitimate|L1": 167,
+  "legitimate|brand_dom_legitimate|L2": 28,
+  "legitimate|brand_dom_phishing|P1": 2,
+  "legitimate|url_model|-": 295,
+  "phishing|brand_dom_legitimate|L1": 3,
+  "phishing|brand_dom_phishing|P1": 15,
+  "phishing|brand_dom_phishing|P2": 1,
+  "phishing|brand_dom_phishing|P3": 4,
+  "phishing|url_model|-": 135
+ },
+ "perubahan_model_ke_akhir": {
+  "legitimate|DANGEROUS->DANGEROUS": 53,
+  "legitimate|DANGEROUS->SAFE": 33,
+  "legitimate|SAFE->DANGEROUS": 2,
+  "legitimate|SAFE->SAFE": 404,
+  "phishing|DANGEROUS->DANGEROUS": 112,
+  "phishing|DANGEROUS->SAFE": 2,
+  "phishing|SAFE->DANGEROUS": 11,
+  "phishing|SAFE->SAFE": 33
+ }
+}

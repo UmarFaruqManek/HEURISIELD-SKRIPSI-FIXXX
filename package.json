@@ -1,0 +1,19 @@
+{
+  "name": "heurishield",
+  "version": "0.7.1",
+  "private": true,
+  "type": "module",
+  "description": "Browser extension for real-time phishing detection with an XGBoost URL model and heuristic brand/DOM rules.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node tests/whitebox-skripsi-20.mjs && node tests/brand-registry-expanded.mjs && node tests/platform-view-url.mjs",
+    "test:whitebox": "node tests/whitebox-skripsi-20.mjs",
+    "test:registry": "node tests/brand-registry-expanded.mjs",
+    "test:platform": "node tests/platform-view-url.mjs",
+    "test:network": "node tests/merdeka-login-destination.mjs",
+    "build:registry": "node tools/build-brand-registry.mjs"
+  }
+}

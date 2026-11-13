@@ -1,0 +1,328 @@
+{
+  "extension_version": "0.7.1",
+  "technique": "branch testing",
+  "total": 40,
+  "passed": 40,
+  "rows": [
+    {
+      "id": "WB-01",
+      "bagian": "Pengumpulan parameter",
+      "kondisi": "Bukti brand, DOM, dan umur domain tidak tersedia",
+      "expected": "Parameter bernilai unknown/null; umur domain null",
+      "actual": "Parameter bernilai unknown/null; umur domain null",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-02",
+      "bagian": "Pengumpulan parameter",
+      "kondisi": "Pemindaian unduhan tidak lengkap (download_scan_incomplete)",
+      "expected": "Daftar ekstensi ditambah unknown",
+      "actual": "Daftar ekstensi ditambah unknown",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-03",
+      "bagian": "Pengumpulan parameter",
+      "kondisi": "Umur domain bernilai negatif/tidak valid",
+      "expected": "domain_age_days = null",
+      "actual": "domain_age_days = null",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-04",
+      "bagian": "Ekstensi file URL",
+      "kondisi": "URL https://unduh.test/setup.exe",
+      "expected": "exe",
+      "actual": "exe",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-05",
+      "bagian": "Ekstensi file URL",
+      "kondisi": "URL tanpa nama file (https://contoh.test/login)",
+      "expected": "null",
+      "actual": "null",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-06",
+      "bagian": "Ekstensi file URL",
+      "kondisi": "Nama file hanya pada query (?file=setup.exe)",
+      "expected": "null",
+      "actual": "null",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-07",
+      "bagian": "Daftar file berbahaya",
+      "kondisi": "Ekstensi zip, iso, lnk, apk dibandingkan pdf",
+      "expected": "zip/iso/lnk/apk termasuk; pdf tidak",
+      "actual": "zip/iso/lnk/apk termasuk; pdf tidak",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-08",
+      "bagian": "Rule P1",
+      "kondisi": "brand_domain_mismatch = true",
+      "expected": "matched",
+      "actual": "matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-09",
+      "bagian": "Rule P1",
+      "kondisi": "brand_domain_mismatch = false",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-10",
+      "bagian": "Rule P1",
+      "kondisi": "brand_domain_mismatch = unknown",
+      "expected": "undetermined",
+      "actual": "undetermined",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-11",
+      "bagian": "Rule P2",
+      "kondisi": "Password, form lintas domain, official_domain_match = false",
+      "expected": "matched",
+      "actual": "matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-12",
+      "bagian": "Rule P2",
+      "kondisi": "Input sensitif (OTP/kartu), form lintas domain, domain bukan resmi",
+      "expected": "matched",
+      "actual": "matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-13",
+      "bagian": "Rule P2",
+      "kondisi": "Password dan domain bukan resmi, tetapi form ke domain sendiri",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-14",
+      "bagian": "Rule P2",
+      "kondisi": "Password dan form lintas domain, official_domain_match = unknown",
+      "expected": "undetermined",
+      "actual": "undetermined",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-15",
+      "bagian": "Rule P3",
+      "kondisi": "Umur 42 hari, domain bukan resmi, password",
+      "expected": "matched",
+      "actual": "matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-16",
+      "bagian": "Rule P3",
+      "kondisi": "Umur tepat 365 hari, domain bukan resmi, password",
+      "expected": "matched",
+      "actual": "matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-17",
+      "bagian": "Rule P3",
+      "kondisi": "Umur 366 hari, domain bukan resmi, password",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-18",
+      "bagian": "Rule P3",
+      "kondisi": "Umur domain tidak diketahui, domain bukan resmi, password",
+      "expected": "undetermined",
+      "actual": "undetermined",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-19",
+      "bagian": "Rule P4",
+      "kondisi": "Umur 42 hari, domain bukan resmi, tautan .exe",
+      "expected": "matched",
+      "actual": "matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-20",
+      "bagian": "Rule P4",
+      "kondisi": "Umur 42 hari, domain bukan resmi, URL halaman berakhiran .apk",
+      "expected": "matched",
+      "actual": "matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-21",
+      "bagian": "Rule P4",
+      "kondisi": "Umur 42 hari, domain bukan resmi, hanya tautan .pdf",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-22",
+      "bagian": "Rule P4",
+      "kondisi": "Umur 42 hari, domain bukan resmi, pemindaian unduhan tidak lengkap",
+      "expected": "undetermined",
+      "actual": "undetermined",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-23",
+      "bagian": "Rule P4",
+      "kondisi": "Domain lama (9.446 hari), domain bukan resmi, tautan .exe",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-24",
+      "bagian": "Rule L1",
+      "kondisi": "Domain resmi, brand di judul, tanpa input akun, umur 4.000 hari",
+      "expected": "matched",
+      "actual": "matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-25",
+      "bagian": "Rule L1",
+      "kondisi": "Domain resmi, tetapi ada kolom password",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-26",
+      "bagian": "Rule L1",
+      "kondisi": "Domain resmi, umur domain 200 hari",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-27",
+      "bagian": "Rule L1",
+      "kondisi": "Domain resmi, brand tidak tampil di judul/heading/logo",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-28",
+      "bagian": "Rule L1",
+      "kondisi": "Domain resmi, umur domain tidak diketahui",
+      "expected": "undetermined",
+      "actual": "undetermined",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-29",
+      "bagian": "Rule L2",
+      "kondisi": "Domain resmi, password, form ke domain sendiri, umur 4.000 hari",
+      "expected": "matched",
+      "actual": "matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-30",
+      "bagian": "Rule L2",
+      "kondisi": "Domain resmi, password, form lintas domain",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-31",
+      "bagian": "Rule L2",
+      "kondisi": "Domain resmi, password, tujuan form tidak terbaca",
+      "expected": "undetermined",
+      "actual": "undetermined",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-32",
+      "bagian": "Decision policy",
+      "kondisi": "Kelas URL tidak tersedia (null)",
+      "expected": "LIMITED (url_unavailable)",
+      "actual": "LIMITED (url_unavailable)",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-33",
+      "bagian": "Decision policy",
+      "kondisi": "Kelas URL tidak dikenali (\"UNKNOWN\")",
+      "expected": "LIMITED (url_unavailable)",
+      "actual": "LIMITED (url_unavailable)",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-34",
+      "bagian": "Decision policy",
+      "kondisi": "Kelas URL SAFE dan P1 matched",
+      "expected": "DANGEROUS (brand_dom_phishing)",
+      "actual": "DANGEROUS (brand_dom_phishing)",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-35",
+      "bagian": "Decision policy",
+      "kondisi": "Kelas URL DANGEROUS, P2 dan L2 sama-sama matched",
+      "expected": "DANGEROUS (brand_dom_phishing)",
+      "actual": "DANGEROUS (brand_dom_phishing)",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-36",
+      "bagian": "Decision policy",
+      "kondisi": "Kelas URL DANGEROUS dan L1 matched",
+      "expected": "SAFE (brand_dom_legitimate)",
+      "actual": "SAFE (brand_dom_legitimate)",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-37",
+      "bagian": "Decision policy",
+      "kondisi": "Kelas URL DANGEROUS, P3 undetermined, tidak ada rule matched",
+      "expected": "DANGEROUS (url_model)",
+      "actual": "DANGEROUS (url_model)",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-38",
+      "bagian": "Decision policy",
+      "kondisi": "Kelas URL SAFE, seluruh rule not_matched",
+      "expected": "SAFE (url_model)",
+      "actual": "SAFE (url_model)",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-39",
+      "bagian": "Daftar manual",
+      "kondisi": "Allowlist/blocklist diisi https://gemini.google.com/app",
+      "expected": "google.com",
+      "actual": "google.com",
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-40",
+      "bagian": "Daftar manual",
+      "kondisi": "Allowlist/blocklist diisi penyewa hosting user.github.io",
+      "expected": "user.github.io",
+      "actual": "user.github.io",
+      "status": "Lulus"
+    }
+  ]
+}

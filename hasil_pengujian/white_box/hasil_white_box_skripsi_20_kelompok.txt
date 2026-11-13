@@ -1,0 +1,439 @@
+============================================================
+ HASIL PENGUJIAN WHITE BOX - EXTENSION HEURISHIELD
+============================================================
+Waktu       : 14 November 2026 pukul 05.23.29 WITA
+Node.js     : v22.23.4
+Lingkungan  : fungsi asli; masukan pengujian terkontrol
+Lingkup     : 20 kelompok / 60 variasi rancangan skripsi
+Pemeriksaan : hasil aktual dibandingkan hasil yang diharapkan
+
+[LULUS] WB-01   1/1  variasi sesuai
+[LULUS] WB-02   1/1  variasi sesuai
+[LULUS] WB-03   4/4  variasi sesuai
+[LULUS] WB-04   8/8  variasi sesuai
+[LULUS] WB-05   3/3  variasi sesuai
+[LULUS] WB-06   2/2  variasi sesuai
+[LULUS] WB-07   1/1  variasi sesuai
+[LULUS] WB-08   1/1  variasi sesuai
+[LULUS] WB-09   3/3  variasi sesuai
+[LULUS] WB-10   3/3  variasi sesuai
+[LULUS] WB-11   1/1  variasi sesuai
+[LULUS] WB-12   1/1  variasi sesuai
+[LULUS] WB-13   3/3  variasi sesuai
+[LULUS] WB-14   3/3  variasi sesuai
+[LULUS] WB-15   3/3  variasi sesuai
+[LULUS] WB-16   2/2  variasi sesuai
+[LULUS] WB-17  10/10 variasi sesuai
+[LULUS] WB-18   2/2  variasi sesuai
+[LULUS] WB-19   6/6  variasi sesuai
+[LULUS] WB-20   2/2  variasi sesuai
+
+--- WB-01: 1 variasi ---
+WB-01.01 Temuan tidak tersedia
+  Masukan    : {}
+  Diharapkan : {"brand_in_title":"unknown","brand_in_heading":"unknown","brand_in_logo":"unknown","claimed_brand":null,"claimed_brand_status":"unknown","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":"unknown","brand_domain_mismatch":"unknown","has_password_field":"unknown","has_sensitive_input":"unknown","form_cross_domain":"unknown","login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":"unknown","download_target_cross_domain":"unknown","domain_age_days":null,"url_file_extension":"unknown"}
+  Aktual     : {"brand_in_title":"unknown","brand_in_heading":"unknown","brand_in_logo":"unknown","claimed_brand":null,"claimed_brand_status":"unknown","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":"unknown","brand_domain_mismatch":"unknown","has_password_field":"unknown","has_sensitive_input":"unknown","form_cross_domain":"unknown","login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":"unknown","download_target_cross_domain":"unknown","domain_age_days":null,"url_file_extension":"unknown"}
+  Status     : Lulus
+
+
+--- WB-02: 1 variasi ---
+WB-02.01 Pemindaian belum lengkap
+  Masukan    : {"extensions":["pdf"],"scan":"download_scan_incomplete"}
+  Diharapkan : ["pdf","unknown"]
+  Aktual     : ["pdf","unknown"]
+  Status     : Lulus
+
+
+--- WB-03: 4 variasi ---
+WB-03.01 Negatif
+  Masukan    : {"domainAge":"-1"}
+  Diharapkan : null
+  Aktual     : null
+  Status     : Lulus
+
+WB-03.02 NaN
+  Masukan    : {"domainAge":"NaN"}
+  Diharapkan : null
+  Aktual     : null
+  Status     : Lulus
+
+WB-03.03 Infinity
+  Masukan    : {"domainAge":"Infinity"}
+  Diharapkan : null
+  Aktual     : null
+  Status     : Lulus
+
+WB-03.04 Tidak tersedia
+  Masukan    : {"domainAge":"undefined"}
+  Diharapkan : null
+  Aktual     : null
+  Status     : Lulus
+
+
+--- WB-04: 8 variasi ---
+WB-04.01 Akhiran URL
+  Masukan    : {"url":"https://unduh.example/setup.exe"}
+  Diharapkan : "exe"
+  Aktual     : "exe"
+  Status     : Lulus
+
+WB-04.02 Akhiran URL
+  Masukan    : {"url":"https://unduh.example/login"}
+  Diharapkan : null
+  Aktual     : null
+  Status     : Lulus
+
+WB-04.03 Akhiran URL
+  Masukan    : {"url":"https://unduh.example/login?file=setup.exe"}
+  Diharapkan : null
+  Aktual     : null
+  Status     : Lulus
+
+WB-04.04 Keanggotaan jenis berkas
+  Masukan    : {"extension":"zip"}
+  Diharapkan : true
+  Aktual     : true
+  Status     : Lulus
+
+WB-04.05 Keanggotaan jenis berkas
+  Masukan    : {"extension":"iso"}
+  Diharapkan : true
+  Aktual     : true
+  Status     : Lulus
+
+WB-04.06 Keanggotaan jenis berkas
+  Masukan    : {"extension":"lnk"}
+  Diharapkan : true
+  Aktual     : true
+  Status     : Lulus
+
+WB-04.07 Keanggotaan jenis berkas
+  Masukan    : {"extension":"apk"}
+  Diharapkan : true
+  Aktual     : true
+  Status     : Lulus
+
+WB-04.08 Keanggotaan jenis berkas
+  Masukan    : {"extension":"pdf"}
+  Diharapkan : false
+  Aktual     : false
+  Status     : Lulus
+
+
+--- WB-05: 3 variasi ---
+WB-05.01 Konflik true
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":true,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "matched"
+  Aktual     : "matched"
+  Status     : Lulus
+
+WB-05.02 Konflik false
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "not_matched"
+  Aktual     : "not_matched"
+  Status     : Lulus
+
+WB-05.03 Konflik unknown
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":"unknown","has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "undetermined"
+  Aktual     : "undetermined"
+  Status     : Lulus
+
+
+--- WB-06: 2 variasi ---
+WB-06.01 Tujuan lintas domain true
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":true,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "matched"
+  Aktual     : "matched"
+  Status     : Lulus
+
+WB-06.02 Tujuan lintas domain false
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "not_matched"
+  Aktual     : "not_matched"
+  Status     : Lulus
+
+
+--- WB-07: 1 variasi ---
+WB-07.01 Masukan sensitif tanpa kata sandi
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":true,"form_cross_domain":true,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "matched"
+  Aktual     : "matched"
+  Status     : Lulus
+
+
+--- WB-08: 1 variasi ---
+WB-08.01 Kecocokan domain belum diketahui
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":"unknown","brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":true,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "undetermined"
+  Aktual     : "undetermined"
+  Status     : Lulus
+
+
+--- WB-09: 3 variasi ---
+WB-09.01 Domain Age 365
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":365,"url_file_extension":null}
+  Diharapkan : "matched"
+  Aktual     : "matched"
+  Status     : Lulus
+
+WB-09.02 Domain Age 366
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":366,"url_file_extension":null}
+  Diharapkan : "not_matched"
+  Aktual     : "not_matched"
+  Status     : Lulus
+
+WB-09.03 Domain Age null
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":null,"url_file_extension":null}
+  Diharapkan : "undetermined"
+  Aktual     : "undetermined"
+  Status     : Lulus
+
+
+--- WB-10: 3 variasi ---
+WB-10.01 EXE dari DOM
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":["exe"],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "matched"
+  Aktual     : "matched"
+  Status     : Lulus
+
+WB-10.02 APK dari URL
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":"apk"}
+  Diharapkan : "matched"
+  Aktual     : "matched"
+  Status     : Lulus
+
+WB-10.03 PDF saja
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":["pdf"],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "not_matched"
+  Aktual     : "not_matched"
+  Status     : Lulus
+
+
+--- WB-11: 1 variasi ---
+WB-11.01 Belum lengkap tanpa ekstensi yang memenuhi aturan
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":["unknown"],"download_target_cross_domain":"unknown","domain_age_days":42,"url_file_extension":null}
+  Diharapkan : "undetermined"
+  Aktual     : "undetermined"
+  Status     : Lulus
+
+
+--- WB-12: 1 variasi ---
+WB-12.01 Domain lama dengan EXE
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":false,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":["exe"],"download_target_cross_domain":"unknown","domain_age_days":4000,"url_file_extension":null}
+  Diharapkan : "not_matched"
+  Aktual     : "not_matched"
+  Status     : Lulus
+
+
+--- WB-13: 3 variasi ---
+WB-13.01 Kedua masukan false
+  Masukan    : {"brand_in_title":true,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":true,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":4000,"url_file_extension":null}
+  Diharapkan : "matched"
+  Aktual     : "matched"
+  Status     : Lulus
+
+WB-13.02 Kedua masukan unknown
+  Masukan    : {"brand_in_title":true,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":true,"brand_domain_mismatch":false,"has_password_field":"unknown","has_sensitive_input":"unknown","form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":4000,"url_file_extension":null}
+  Diharapkan : "matched"
+  Aktual     : "matched"
+  Status     : Lulus
+
+WB-13.03 Kata sandi true
+  Masukan    : {"brand_in_title":true,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":true,"brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":4000,"url_file_extension":null}
+  Diharapkan : "not_matched"
+  Aktual     : "not_matched"
+  Status     : Lulus
+
+
+--- WB-14: 3 variasi ---
+WB-14.01 Usia 200 hari
+  Masukan    : {"brand_in_title":true,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":true,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":200,"url_file_extension":null}
+  Diharapkan : "not_matched"
+  Aktual     : "not_matched"
+  Status     : Lulus
+
+WB-14.02 Brand tidak tampil
+  Masukan    : {"brand_in_title":false,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":true,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":4000,"url_file_extension":null}
+  Diharapkan : "not_matched"
+  Aktual     : "not_matched"
+  Status     : Lulus
+
+WB-14.03 Usia tidak diketahui
+  Masukan    : {"brand_in_title":true,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":true,"brand_domain_mismatch":false,"has_password_field":false,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":null,"url_file_extension":null}
+  Diharapkan : "undetermined"
+  Aktual     : "undetermined"
+  Status     : Lulus
+
+
+--- WB-15: 3 variasi ---
+WB-15.01 Tujuan lintas domain false
+  Masukan    : {"brand_in_title":true,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":true,"brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":false,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":4000,"url_file_extension":null}
+  Diharapkan : "matched"
+  Aktual     : "matched"
+  Status     : Lulus
+
+WB-15.02 Tujuan lintas domain true
+  Masukan    : {"brand_in_title":true,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":true,"brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":true,"login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":4000,"url_file_extension":null}
+  Diharapkan : "not_matched"
+  Aktual     : "not_matched"
+  Status     : Lulus
+
+WB-15.03 Tujuan lintas domain unknown
+  Masukan    : {"brand_in_title":true,"brand_in_heading":false,"brand_in_logo":false,"claimed_brand":"Contoh","claimed_brand_status":"identified","verified_reference_domain":null,"host_brand_claim":"unknown","official_domain_match":true,"brand_domain_mismatch":false,"has_password_field":true,"has_sensitive_input":false,"form_cross_domain":"unknown","login_button_detected":"unknown","login_redirect_detected":"unknown","has_download_link":"unknown","download_file_extensions":[],"download_target_cross_domain":"unknown","domain_age_days":4000,"url_file_extension":null}
+  Diharapkan : "undetermined"
+  Aktual     : "undetermined"
+  Status     : Lulus
+
+
+--- WB-16: 2 variasi ---
+WB-16.01 Masukan kelas tidak valid
+  Masukan    : {"urlClass":null}
+  Diharapkan : {"verdict":"LIMITED","source":"url_unavailable","reasons":[]}
+  Aktual     : {"verdict":"LIMITED","source":"url_unavailable","reasons":[]}
+  Status     : Lulus
+
+WB-16.02 Masukan kelas tidak valid
+  Masukan    : {"urlClass":"UNKNOWN"}
+  Diharapkan : {"verdict":"LIMITED","source":"url_unavailable","reasons":[]}
+  Aktual     : {"verdict":"LIMITED","source":"url_unavailable","reasons":[]}
+  Status     : Lulus
+
+
+--- WB-17: 10 variasi ---
+WB-17.01 Aturan P terpenuhi
+  Masukan    : {"urlClass":"SAFE","rules":[{"id":"P1","decision":"phishing","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P1"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P1"]}
+  Status     : Lulus
+
+WB-17.02 Aturan P terpenuhi
+  Masukan    : {"urlClass":"SAFE","rules":[{"id":"P2","decision":"phishing","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P2"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P2"]}
+  Status     : Lulus
+
+WB-17.03 Aturan P terpenuhi
+  Masukan    : {"urlClass":"SAFE","rules":[{"id":"P3","decision":"phishing","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P3"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P3"]}
+  Status     : Lulus
+
+WB-17.04 Aturan P terpenuhi
+  Masukan    : {"urlClass":"SAFE","rules":[{"id":"P4","decision":"phishing","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P4"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P4"]}
+  Status     : Lulus
+
+WB-17.05 P dan L sama-sama terpenuhi
+  Masukan    : {"urlClass":"SAFE","rules":[{"id":"P2","decision":"phishing","status":"matched"},{"id":"L2","decision":"legitimate","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P2"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P2"]}
+  Status     : Lulus
+
+WB-17.06 Aturan P terpenuhi
+  Masukan    : {"urlClass":"DANGEROUS","rules":[{"id":"P1","decision":"phishing","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P1"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P1"]}
+  Status     : Lulus
+
+WB-17.07 Aturan P terpenuhi
+  Masukan    : {"urlClass":"DANGEROUS","rules":[{"id":"P2","decision":"phishing","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P2"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P2"]}
+  Status     : Lulus
+
+WB-17.08 Aturan P terpenuhi
+  Masukan    : {"urlClass":"DANGEROUS","rules":[{"id":"P3","decision":"phishing","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P3"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P3"]}
+  Status     : Lulus
+
+WB-17.09 Aturan P terpenuhi
+  Masukan    : {"urlClass":"DANGEROUS","rules":[{"id":"P4","decision":"phishing","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P4"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P4"]}
+  Status     : Lulus
+
+WB-17.10 P dan L sama-sama terpenuhi
+  Masukan    : {"urlClass":"DANGEROUS","rules":[{"id":"P2","decision":"phishing","status":"matched"},{"id":"L2","decision":"legitimate","status":"matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P2"]}
+  Aktual     : {"verdict":"DANGEROUS","source":"brand_dom_phishing","reasons":["P2"]}
+  Status     : Lulus
+
+
+--- WB-18: 2 variasi ---
+WB-18.01 Koreksi menjadi legitimate
+  Masukan    : {"urlClass":"DANGEROUS","rules":[{"id":"L1","decision":"legitimate","status":"matched"}]}
+  Diharapkan : {"verdict":"SAFE","source":"brand_dom_legitimate","reasons":["L1"]}
+  Aktual     : {"verdict":"SAFE","source":"brand_dom_legitimate","reasons":["L1"]}
+  Status     : Lulus
+
+WB-18.02 Koreksi menjadi legitimate
+  Masukan    : {"urlClass":"DANGEROUS","rules":[{"id":"L2","decision":"legitimate","status":"matched"}]}
+  Diharapkan : {"verdict":"SAFE","source":"brand_dom_legitimate","reasons":["L2"]}
+  Aktual     : {"verdict":"SAFE","source":"brand_dom_legitimate","reasons":["L2"]}
+  Status     : Lulus
+
+
+--- WB-19: 6 variasi ---
+WB-19.01 Tidak ada aturan matched
+  Masukan    : {"urlClass":"SAFE","rules":[{"id":"P1","decision":"phishing","status":"not_matched"},{"id":"P2","decision":"phishing","status":"not_matched"},{"id":"P3","decision":"phishing","status":"not_matched"},{"id":"P4","decision":"phishing","status":"not_matched"},{"id":"L1","decision":"legitimate","status":"not_matched"},{"id":"L2","decision":"legitimate","status":"not_matched"}]}
+  Diharapkan : {"verdict":"SAFE","source":"url_model","reasons":[]}
+  Aktual     : {"verdict":"SAFE","source":"url_model","reasons":[]}
+  Status     : Lulus
+
+WB-19.02 Tidak ada aturan matched
+  Masukan    : {"urlClass":"SAFE","rules":[{"id":"P1","decision":"phishing","status":"undetermined"},{"id":"P2","decision":"phishing","status":"undetermined"},{"id":"P3","decision":"phishing","status":"undetermined"},{"id":"P4","decision":"phishing","status":"undetermined"},{"id":"L1","decision":"legitimate","status":"undetermined"},{"id":"L2","decision":"legitimate","status":"undetermined"}]}
+  Diharapkan : {"verdict":"SAFE","source":"url_model","reasons":[]}
+  Aktual     : {"verdict":"SAFE","source":"url_model","reasons":[]}
+  Status     : Lulus
+
+WB-19.03 Tidak ada aturan matched
+  Masukan    : {"urlClass":"SAFE","rules":[]}
+  Diharapkan : {"verdict":"SAFE","source":"url_model","reasons":[]}
+  Aktual     : {"verdict":"SAFE","source":"url_model","reasons":[]}
+  Status     : Lulus
+
+WB-19.04 Tidak ada aturan matched
+  Masukan    : {"urlClass":"DANGEROUS","rules":[{"id":"P1","decision":"phishing","status":"not_matched"},{"id":"P2","decision":"phishing","status":"not_matched"},{"id":"P3","decision":"phishing","status":"not_matched"},{"id":"P4","decision":"phishing","status":"not_matched"},{"id":"L1","decision":"legitimate","status":"not_matched"},{"id":"L2","decision":"legitimate","status":"not_matched"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"url_model","reasons":[]}
+  Aktual     : {"verdict":"DANGEROUS","source":"url_model","reasons":[]}
+  Status     : Lulus
+
+WB-19.05 Tidak ada aturan matched
+  Masukan    : {"urlClass":"DANGEROUS","rules":[{"id":"P1","decision":"phishing","status":"undetermined"},{"id":"P2","decision":"phishing","status":"undetermined"},{"id":"P3","decision":"phishing","status":"undetermined"},{"id":"P4","decision":"phishing","status":"undetermined"},{"id":"L1","decision":"legitimate","status":"undetermined"},{"id":"L2","decision":"legitimate","status":"undetermined"}]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"url_model","reasons":[]}
+  Aktual     : {"verdict":"DANGEROUS","source":"url_model","reasons":[]}
+  Status     : Lulus
+
+WB-19.06 Tidak ada aturan matched
+  Masukan    : {"urlClass":"DANGEROUS","rules":[]}
+  Diharapkan : {"verdict":"DANGEROUS","source":"url_model","reasons":[]}
+  Aktual     : {"verdict":"DANGEROUS","source":"url_model","reasons":[]}
+  Status     : Lulus
+
+
+--- WB-20: 2 variasi ---
+WB-20.01 Normalisasi domain
+  Masukan    : {"value":"https://gemini.google.com/app"}
+  Diharapkan : "google.com"
+  Aktual     : "google.com"
+  Status     : Lulus
+
+WB-20.02 Normalisasi domain
+  Masukan    : {"value":"user.github.io"}
+  Diharapkan : "user.github.io"
+  Aktual     : "user.github.io"
+  Status     : Lulus
+
+
+------------------------------------------------------------
+Kelompok lulus : 20/20
+Variasi lulus  : 60/60
+Variasi gagal  : 0
+Durasi         : 5 ms
+Ini pengujian logika fungsi; bukan pengukuran akurasi situs live.
+Tidak menyatakan seluruh kode extension telah tercakup.
+Laporan JSON   : hasil_pengujian/white_box/hasil_white_box_skripsi_20_kelompok.json
+Log lengkap    : hasil_pengujian/white_box/hasil_white_box_skripsi_20_kelompok.txt

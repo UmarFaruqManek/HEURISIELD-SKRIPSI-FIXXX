@@ -1,0 +1,192 @@
+{
+  "mode": "local_mocked_page_and_api_real_extension",
+  "results": [
+    {
+      "id": "D1",
+      "scenario": "Domain baru, tampil BCA, tautan .exe",
+      "url": "https://unduh-lab.test/aplikasi",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand_status": "identified",
+      "official_domain_match": false,
+      "download_file_extensions": [
+        "exe"
+      ],
+      "url_file_extension": null,
+      "P4": "matched",
+      "matched": [
+        "P4"
+      ],
+      "verdict": "DANGEROUS",
+      "source": "brand_dom_phishing",
+      "expected_P4": "matched",
+      "expected_verdict": "DANGEROUS",
+      "passed": true
+    },
+    {
+      "id": "D2",
+      "scenario": "Domain baru, tampil BCA, tautan .apk",
+      "url": "https://unduh-lab.test/mobile",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand_status": "identified",
+      "official_domain_match": false,
+      "download_file_extensions": [
+        "apk"
+      ],
+      "url_file_extension": null,
+      "P4": "matched",
+      "matched": [
+        "P4"
+      ],
+      "verdict": "DANGEROUS",
+      "source": "brand_dom_phishing",
+      "expected_P4": "matched",
+      "expected_verdict": "DANGEROUS",
+      "passed": true
+    },
+    {
+      "id": "D3",
+      "scenario": "Domain baru, tampil BCA, URL berakhiran .exe",
+      "url": "https://unduh-lab.test/setup.exe",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand_status": "identified",
+      "official_domain_match": false,
+      "download_file_extensions": [],
+      "url_file_extension": "exe",
+      "P4": "matched",
+      "matched": [
+        "P4"
+      ],
+      "verdict": "DANGEROUS",
+      "source": "brand_dom_phishing",
+      "expected_P4": "matched",
+      "expected_verdict": "DANGEROUS",
+      "passed": true
+    },
+    {
+      "id": "D4",
+      "scenario": "Domain baru, tampil BCA, tautan .pdf",
+      "url": "https://unduh-lab.test/manual",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand_status": "identified",
+      "official_domain_match": false,
+      "download_file_extensions": [
+        "pdf"
+      ],
+      "url_file_extension": null,
+      "P4": "not_matched",
+      "matched": [],
+      "verdict": "DANGEROUS",
+      "source": "url_model",
+      "expected_P4": "not_matched",
+      "expected_verdict": null,
+      "passed": true
+    },
+    {
+      "id": "D5",
+      "scenario": "Domain baru, tampil BCA, tanpa unduhan",
+      "url": "https://unduh-lab.test/tentang",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand_status": "identified",
+      "official_domain_match": false,
+      "download_file_extensions": [],
+      "url_file_extension": null,
+      "P4": "not_matched",
+      "matched": [],
+      "verdict": "DANGEROUS",
+      "source": "url_model",
+      "expected_P4": "not_matched",
+      "expected_verdict": null,
+      "passed": true
+    },
+    {
+      "id": "D6",
+      "scenario": "Domain lama, tampil BCA, tautan .exe",
+      "url": "https://arsip-lab.test/aplikasi",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 9446,
+      "claimed_brand_status": "identified",
+      "official_domain_match": false,
+      "download_file_extensions": [
+        "exe"
+      ],
+      "url_file_extension": null,
+      "P4": "not_matched",
+      "matched": [],
+      "verdict": "DANGEROUS",
+      "source": "url_model",
+      "expected_P4": "not_matched",
+      "expected_verdict": null,
+      "passed": true
+    },
+    {
+      "id": "D7",
+      "scenario": "Domain baru, tanpa brand, tautan .exe",
+      "url": "https://unduh-lab.test/alat",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand_status": "unknown",
+      "official_domain_match": "unknown",
+      "download_file_extensions": [
+        "exe"
+      ],
+      "url_file_extension": null,
+      "P4": "undetermined",
+      "matched": [],
+      "verdict": "DANGEROUS",
+      "source": "url_model",
+      "expected_P4": null,
+      "expected_verdict": null,
+      "passed": true
+    },
+    {
+      "id": "D8",
+      "scenario": "Brand di hostname + .exe",
+      "url": "https://bca.unduh-lab.test/aplikasi",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand_status": "identified",
+      "official_domain_match": false,
+      "download_file_extensions": [
+        "exe"
+      ],
+      "url_file_extension": null,
+      "P4": "matched",
+      "matched": [
+        "P1",
+        "P4"
+      ],
+      "verdict": "DANGEROUS",
+      "source": "brand_dom_phishing",
+      "expected_P4": "matched",
+      "expected_verdict": "DANGEROUS",
+      "passed": true
+    },
+    {
+      "id": "D9",
+      "scenario": "Domain resmi BCA, tautan .exe",
+      "url": "https://bca.co.id/download",
+      "url_model": "SAFE",
+      "domain_age_days": 10177,
+      "claimed_brand_status": "identified",
+      "official_domain_match": true,
+      "download_file_extensions": [
+        "exe"
+      ],
+      "url_file_extension": null,
+      "P4": "not_matched",
+      "matched": [
+        "L1"
+      ],
+      "verdict": "SAFE",
+      "source": "brand_dom_legitimate",
+      "expected_P4": "not_matched",
+      "expected_verdict": "SAFE",
+      "passed": true
+    }
+  ]
+}

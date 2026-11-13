@@ -1,0 +1,1644 @@
+{
+  "executed_at_utc": "2026-11-13T21:23:29.011Z",
+  "timezone": "Asia/Makassar",
+  "node_version": "v22.23.4",
+  "duration_ms": 5,
+  "method": "White-box functional logic checks derived from the thesis test conditions",
+  "execution": "Real imported functions executed in Node.js; parameter and rule inputs supplied directly; no browser or network used.",
+  "limitations": [
+    "No live classification accuracy measurement.",
+    "No measurement of whole-extension code coverage.",
+    "Registry enlargement is not exercised by these direct rule inputs; its separate regression report must be kept distinct."
+  ],
+  "source_hashes": {
+    "src/analyzer/rules/parameters.js": "1ca37e47518be8fa591b0052813215c5a666fc3cb81e839ac797a3e0ea45ca25",
+    "src/analyzer/rules/heuristic-rules.js": "aa7211dc3c2f7072782947dd0d3565bc78381a14da350f9294a94dbca798ff08",
+    "src/analyzer/rules/decision-policy.js": "4df49f46169f59aac9d315ba549e35f89eb95437d47a0f107736863933a221a7",
+    "src/analyzer/url/download-file-extension.js": "69dd1dae9d0b37e81d5e24fbfe0ec3aeacbfa1b26972fe09e6d09590c1969fb4",
+    "src/storage/settings.js": "eae929fe56337df6d2139cf8976341c7ad11fc623fe911f06228458cfc464098"
+  },
+  "groups": 20,
+  "variations": 60,
+  "passed": 60,
+  "rows": [
+    {
+      "id": "WB-01",
+      "variations": [
+        {
+          "variation": "Temuan tidak tersedia",
+          "inputs": {},
+          "expected": {
+            "brand_in_title": "unknown",
+            "brand_in_heading": "unknown",
+            "brand_in_logo": "unknown",
+            "claimed_brand": null,
+            "claimed_brand_status": "unknown",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": "unknown",
+            "brand_domain_mismatch": "unknown",
+            "has_password_field": "unknown",
+            "has_sensitive_input": "unknown",
+            "form_cross_domain": "unknown",
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": "unknown",
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": null,
+            "url_file_extension": "unknown"
+          },
+          "actual": {
+            "brand_in_title": "unknown",
+            "brand_in_heading": "unknown",
+            "brand_in_logo": "unknown",
+            "claimed_brand": null,
+            "claimed_brand_status": "unknown",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": "unknown",
+            "brand_domain_mismatch": "unknown",
+            "has_password_field": "unknown",
+            "has_sensitive_input": "unknown",
+            "form_cross_domain": "unknown",
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": "unknown",
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": null,
+            "url_file_extension": "unknown"
+          },
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 1,
+      "passed": 1,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-02",
+      "variations": [
+        {
+          "variation": "Pemindaian belum lengkap",
+          "inputs": {
+            "extensions": [
+              "pdf"
+            ],
+            "scan": "download_scan_incomplete"
+          },
+          "expected": [
+            "pdf",
+            "unknown"
+          ],
+          "actual": [
+            "pdf",
+            "unknown"
+          ],
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 1,
+      "passed": 1,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-03",
+      "variations": [
+        {
+          "variation": "Negatif",
+          "inputs": {
+            "domainAge": "-1"
+          },
+          "expected": null,
+          "actual": null,
+          "status": "Lulus"
+        },
+        {
+          "variation": "NaN",
+          "inputs": {
+            "domainAge": "NaN"
+          },
+          "expected": null,
+          "actual": null,
+          "status": "Lulus"
+        },
+        {
+          "variation": "Infinity",
+          "inputs": {
+            "domainAge": "Infinity"
+          },
+          "expected": null,
+          "actual": null,
+          "status": "Lulus"
+        },
+        {
+          "variation": "Tidak tersedia",
+          "inputs": {
+            "domainAge": "undefined"
+          },
+          "expected": null,
+          "actual": null,
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 4,
+      "passed": 4,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-04",
+      "variations": [
+        {
+          "variation": "Akhiran URL",
+          "inputs": {
+            "url": "https://unduh.example/setup.exe"
+          },
+          "expected": "exe",
+          "actual": "exe",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Akhiran URL",
+          "inputs": {
+            "url": "https://unduh.example/login"
+          },
+          "expected": null,
+          "actual": null,
+          "status": "Lulus"
+        },
+        {
+          "variation": "Akhiran URL",
+          "inputs": {
+            "url": "https://unduh.example/login?file=setup.exe"
+          },
+          "expected": null,
+          "actual": null,
+          "status": "Lulus"
+        },
+        {
+          "variation": "Keanggotaan jenis berkas",
+          "inputs": {
+            "extension": "zip"
+          },
+          "expected": true,
+          "actual": true,
+          "status": "Lulus"
+        },
+        {
+          "variation": "Keanggotaan jenis berkas",
+          "inputs": {
+            "extension": "iso"
+          },
+          "expected": true,
+          "actual": true,
+          "status": "Lulus"
+        },
+        {
+          "variation": "Keanggotaan jenis berkas",
+          "inputs": {
+            "extension": "lnk"
+          },
+          "expected": true,
+          "actual": true,
+          "status": "Lulus"
+        },
+        {
+          "variation": "Keanggotaan jenis berkas",
+          "inputs": {
+            "extension": "apk"
+          },
+          "expected": true,
+          "actual": true,
+          "status": "Lulus"
+        },
+        {
+          "variation": "Keanggotaan jenis berkas",
+          "inputs": {
+            "extension": "pdf"
+          },
+          "expected": false,
+          "actual": false,
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 8,
+      "passed": 8,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-05",
+      "variations": [
+        {
+          "variation": "Konflik true",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": true,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "matched",
+          "actual": "matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Konflik false",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Konflik unknown",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": "unknown",
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "undetermined",
+          "actual": "undetermined",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 3,
+      "passed": 3,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-06",
+      "variations": [
+        {
+          "variation": "Tujuan lintas domain true",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": true,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "matched",
+          "actual": "matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Tujuan lintas domain false",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 2,
+      "passed": 2,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-07",
+      "variations": [
+        {
+          "variation": "Masukan sensitif tanpa kata sandi",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": true,
+            "form_cross_domain": true,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "matched",
+          "actual": "matched",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 1,
+      "passed": 1,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-08",
+      "variations": [
+        {
+          "variation": "Kecocokan domain belum diketahui",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": "unknown",
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": true,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "undetermined",
+          "actual": "undetermined",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 1,
+      "passed": 1,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-09",
+      "variations": [
+        {
+          "variation": "Domain Age 365",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 365,
+            "url_file_extension": null
+          },
+          "expected": "matched",
+          "actual": "matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Domain Age 366",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 366,
+            "url_file_extension": null
+          },
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Domain Age null",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": null,
+            "url_file_extension": null
+          },
+          "expected": "undetermined",
+          "actual": "undetermined",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 3,
+      "passed": 3,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-10",
+      "variations": [
+        {
+          "variation": "EXE dari DOM",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [
+              "exe"
+            ],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "matched",
+          "actual": "matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "APK dari URL",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": "apk"
+          },
+          "expected": "matched",
+          "actual": "matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "PDF saja",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [
+              "pdf"
+            ],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 3,
+      "passed": 3,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-11",
+      "variations": [
+        {
+          "variation": "Belum lengkap tanpa ekstensi yang memenuhi aturan",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [
+              "unknown"
+            ],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 42,
+            "url_file_extension": null
+          },
+          "expected": "undetermined",
+          "actual": "undetermined",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 1,
+      "passed": 1,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-12",
+      "variations": [
+        {
+          "variation": "Domain lama dengan EXE",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": false,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [
+              "exe"
+            ],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 4000,
+            "url_file_extension": null
+          },
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 1,
+      "passed": 1,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-13",
+      "variations": [
+        {
+          "variation": "Kedua masukan false",
+          "inputs": {
+            "brand_in_title": true,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": true,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 4000,
+            "url_file_extension": null
+          },
+          "expected": "matched",
+          "actual": "matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Kedua masukan unknown",
+          "inputs": {
+            "brand_in_title": true,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": true,
+            "brand_domain_mismatch": false,
+            "has_password_field": "unknown",
+            "has_sensitive_input": "unknown",
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 4000,
+            "url_file_extension": null
+          },
+          "expected": "matched",
+          "actual": "matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Kata sandi true",
+          "inputs": {
+            "brand_in_title": true,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": true,
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 4000,
+            "url_file_extension": null
+          },
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 3,
+      "passed": 3,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-14",
+      "variations": [
+        {
+          "variation": "Usia 200 hari",
+          "inputs": {
+            "brand_in_title": true,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": true,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 200,
+            "url_file_extension": null
+          },
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Brand tidak tampil",
+          "inputs": {
+            "brand_in_title": false,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": true,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 4000,
+            "url_file_extension": null
+          },
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Usia tidak diketahui",
+          "inputs": {
+            "brand_in_title": true,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": true,
+            "brand_domain_mismatch": false,
+            "has_password_field": false,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": null,
+            "url_file_extension": null
+          },
+          "expected": "undetermined",
+          "actual": "undetermined",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 3,
+      "passed": 3,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-15",
+      "variations": [
+        {
+          "variation": "Tujuan lintas domain false",
+          "inputs": {
+            "brand_in_title": true,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": true,
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": false,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 4000,
+            "url_file_extension": null
+          },
+          "expected": "matched",
+          "actual": "matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Tujuan lintas domain true",
+          "inputs": {
+            "brand_in_title": true,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": true,
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": true,
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 4000,
+            "url_file_extension": null
+          },
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Tujuan lintas domain unknown",
+          "inputs": {
+            "brand_in_title": true,
+            "brand_in_heading": false,
+            "brand_in_logo": false,
+            "claimed_brand": "Contoh",
+            "claimed_brand_status": "identified",
+            "verified_reference_domain": null,
+            "host_brand_claim": "unknown",
+            "official_domain_match": true,
+            "brand_domain_mismatch": false,
+            "has_password_field": true,
+            "has_sensitive_input": false,
+            "form_cross_domain": "unknown",
+            "login_button_detected": "unknown",
+            "login_redirect_detected": "unknown",
+            "has_download_link": "unknown",
+            "download_file_extensions": [],
+            "download_target_cross_domain": "unknown",
+            "domain_age_days": 4000,
+            "url_file_extension": null
+          },
+          "expected": "undetermined",
+          "actual": "undetermined",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 3,
+      "passed": 3,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-16",
+      "variations": [
+        {
+          "variation": "Masukan kelas tidak valid",
+          "inputs": {
+            "urlClass": null
+          },
+          "expected": {
+            "verdict": "LIMITED",
+            "source": "url_unavailable",
+            "reasons": []
+          },
+          "actual": {
+            "verdict": "LIMITED",
+            "source": "url_unavailable",
+            "reasons": []
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Masukan kelas tidak valid",
+          "inputs": {
+            "urlClass": "UNKNOWN"
+          },
+          "expected": {
+            "verdict": "LIMITED",
+            "source": "url_unavailable",
+            "reasons": []
+          },
+          "actual": {
+            "verdict": "LIMITED",
+            "source": "url_unavailable",
+            "reasons": []
+          },
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 2,
+      "passed": 2,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-17",
+      "variations": [
+        {
+          "variation": "Aturan P terpenuhi",
+          "inputs": {
+            "urlClass": "SAFE",
+            "rules": [
+              {
+                "id": "P1",
+                "decision": "phishing",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P1"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P1"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Aturan P terpenuhi",
+          "inputs": {
+            "urlClass": "SAFE",
+            "rules": [
+              {
+                "id": "P2",
+                "decision": "phishing",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P2"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P2"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Aturan P terpenuhi",
+          "inputs": {
+            "urlClass": "SAFE",
+            "rules": [
+              {
+                "id": "P3",
+                "decision": "phishing",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P3"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P3"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Aturan P terpenuhi",
+          "inputs": {
+            "urlClass": "SAFE",
+            "rules": [
+              {
+                "id": "P4",
+                "decision": "phishing",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P4"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P4"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "P dan L sama-sama terpenuhi",
+          "inputs": {
+            "urlClass": "SAFE",
+            "rules": [
+              {
+                "id": "P2",
+                "decision": "phishing",
+                "status": "matched"
+              },
+              {
+                "id": "L2",
+                "decision": "legitimate",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P2"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P2"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Aturan P terpenuhi",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": [
+              {
+                "id": "P1",
+                "decision": "phishing",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P1"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P1"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Aturan P terpenuhi",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": [
+              {
+                "id": "P2",
+                "decision": "phishing",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P2"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P2"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Aturan P terpenuhi",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": [
+              {
+                "id": "P3",
+                "decision": "phishing",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P3"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P3"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Aturan P terpenuhi",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": [
+              {
+                "id": "P4",
+                "decision": "phishing",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P4"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P4"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "P dan L sama-sama terpenuhi",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": [
+              {
+                "id": "P2",
+                "decision": "phishing",
+                "status": "matched"
+              },
+              {
+                "id": "L2",
+                "decision": "legitimate",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P2"
+            ]
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "brand_dom_phishing",
+            "reasons": [
+              "P2"
+            ]
+          },
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 10,
+      "passed": 10,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-18",
+      "variations": [
+        {
+          "variation": "Koreksi menjadi legitimate",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": [
+              {
+                "id": "L1",
+                "decision": "legitimate",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "SAFE",
+            "source": "brand_dom_legitimate",
+            "reasons": [
+              "L1"
+            ]
+          },
+          "actual": {
+            "verdict": "SAFE",
+            "source": "brand_dom_legitimate",
+            "reasons": [
+              "L1"
+            ]
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Koreksi menjadi legitimate",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": [
+              {
+                "id": "L2",
+                "decision": "legitimate",
+                "status": "matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "SAFE",
+            "source": "brand_dom_legitimate",
+            "reasons": [
+              "L2"
+            ]
+          },
+          "actual": {
+            "verdict": "SAFE",
+            "source": "brand_dom_legitimate",
+            "reasons": [
+              "L2"
+            ]
+          },
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 2,
+      "passed": 2,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-19",
+      "variations": [
+        {
+          "variation": "Tidak ada aturan matched",
+          "inputs": {
+            "urlClass": "SAFE",
+            "rules": [
+              {
+                "id": "P1",
+                "decision": "phishing",
+                "status": "not_matched"
+              },
+              {
+                "id": "P2",
+                "decision": "phishing",
+                "status": "not_matched"
+              },
+              {
+                "id": "P3",
+                "decision": "phishing",
+                "status": "not_matched"
+              },
+              {
+                "id": "P4",
+                "decision": "phishing",
+                "status": "not_matched"
+              },
+              {
+                "id": "L1",
+                "decision": "legitimate",
+                "status": "not_matched"
+              },
+              {
+                "id": "L2",
+                "decision": "legitimate",
+                "status": "not_matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "SAFE",
+            "source": "url_model",
+            "reasons": []
+          },
+          "actual": {
+            "verdict": "SAFE",
+            "source": "url_model",
+            "reasons": []
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Tidak ada aturan matched",
+          "inputs": {
+            "urlClass": "SAFE",
+            "rules": [
+              {
+                "id": "P1",
+                "decision": "phishing",
+                "status": "undetermined"
+              },
+              {
+                "id": "P2",
+                "decision": "phishing",
+                "status": "undetermined"
+              },
+              {
+                "id": "P3",
+                "decision": "phishing",
+                "status": "undetermined"
+              },
+              {
+                "id": "P4",
+                "decision": "phishing",
+                "status": "undetermined"
+              },
+              {
+                "id": "L1",
+                "decision": "legitimate",
+                "status": "undetermined"
+              },
+              {
+                "id": "L2",
+                "decision": "legitimate",
+                "status": "undetermined"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "SAFE",
+            "source": "url_model",
+            "reasons": []
+          },
+          "actual": {
+            "verdict": "SAFE",
+            "source": "url_model",
+            "reasons": []
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Tidak ada aturan matched",
+          "inputs": {
+            "urlClass": "SAFE",
+            "rules": []
+          },
+          "expected": {
+            "verdict": "SAFE",
+            "source": "url_model",
+            "reasons": []
+          },
+          "actual": {
+            "verdict": "SAFE",
+            "source": "url_model",
+            "reasons": []
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Tidak ada aturan matched",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": [
+              {
+                "id": "P1",
+                "decision": "phishing",
+                "status": "not_matched"
+              },
+              {
+                "id": "P2",
+                "decision": "phishing",
+                "status": "not_matched"
+              },
+              {
+                "id": "P3",
+                "decision": "phishing",
+                "status": "not_matched"
+              },
+              {
+                "id": "P4",
+                "decision": "phishing",
+                "status": "not_matched"
+              },
+              {
+                "id": "L1",
+                "decision": "legitimate",
+                "status": "not_matched"
+              },
+              {
+                "id": "L2",
+                "decision": "legitimate",
+                "status": "not_matched"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "url_model",
+            "reasons": []
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "url_model",
+            "reasons": []
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Tidak ada aturan matched",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": [
+              {
+                "id": "P1",
+                "decision": "phishing",
+                "status": "undetermined"
+              },
+              {
+                "id": "P2",
+                "decision": "phishing",
+                "status": "undetermined"
+              },
+              {
+                "id": "P3",
+                "decision": "phishing",
+                "status": "undetermined"
+              },
+              {
+                "id": "P4",
+                "decision": "phishing",
+                "status": "undetermined"
+              },
+              {
+                "id": "L1",
+                "decision": "legitimate",
+                "status": "undetermined"
+              },
+              {
+                "id": "L2",
+                "decision": "legitimate",
+                "status": "undetermined"
+              }
+            ]
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "url_model",
+            "reasons": []
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "url_model",
+            "reasons": []
+          },
+          "status": "Lulus"
+        },
+        {
+          "variation": "Tidak ada aturan matched",
+          "inputs": {
+            "urlClass": "DANGEROUS",
+            "rules": []
+          },
+          "expected": {
+            "verdict": "DANGEROUS",
+            "source": "url_model",
+            "reasons": []
+          },
+          "actual": {
+            "verdict": "DANGEROUS",
+            "source": "url_model",
+            "reasons": []
+          },
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 6,
+      "passed": 6,
+      "status": "Lulus"
+    },
+    {
+      "id": "WB-20",
+      "variations": [
+        {
+          "variation": "Normalisasi domain",
+          "inputs": {
+            "value": "https://gemini.google.com/app"
+          },
+          "expected": "google.com",
+          "actual": "google.com",
+          "status": "Lulus"
+        },
+        {
+          "variation": "Normalisasi domain",
+          "inputs": {
+            "value": "user.github.io"
+          },
+          "expected": "user.github.io",
+          "actual": "user.github.io",
+          "status": "Lulus"
+        }
+      ],
+      "variation_count": 2,
+      "passed": 2,
+      "status": "Lulus"
+    }
+  ]
+}

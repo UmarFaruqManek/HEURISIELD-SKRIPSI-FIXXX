@@ -1,0 +1,17 @@
+{
+  "source": {
+    "repository": "https://github.com/Busineessfree/open-company-database",
+    "commit": "a0b704be3eb3bc057f1707820df6dbefac5cfeaf",
+    "download_url": "https://raw.githubusercontent.com/Busineessfree/open-company-database/a0b704be3eb3bc057f1707820df6dbefac5cfeaf/open_company_database_sample.csv",
+    "sha256": "3bd9bf719461db2f907aee257168cc1d4e1a1f0c00d6dd235ea63e07ddf74c68",
+    "license": "CC BY-NC 4.0",
+    "source_kind": "company directory, not independently verified brand ownership"
+  },
+  "source_rows": 100000,
+  "eligible_rows": 78693,
+  "imported_distinct_names": 10000,
+  "curated_distinct_names": 31,
+  "total_distinct_names": 10031,
+  "selection": "Valid ICANN company domains; name/domain-label relationship; unique compact names and domains; rank bucket then lexical order; no test labels used.",
+  "imported_trust": "Unverified directory candidates. Domain membership is not exhaustive. No automatic verified promotion."
+}

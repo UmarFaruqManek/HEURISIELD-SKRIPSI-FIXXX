@@ -1,0 +1,274 @@
+{
+  "mode": "local_mocked_page_and_api_real_extension",
+  "results": [
+    {
+      "id": "H1",
+      "scenario": "Login BCA, domain lama, data dikirim via Telegram Bot API",
+      "url": "https://portal-lama.test/login",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 9446,
+      "claimed_brand": "BCA",
+      "official_domain_match": false,
+      "self_reference_conflict": null,
+      "host_brand_claim": "unknown",
+      "has_password_field": true,
+      "form_cross_domain": true,
+      "credential_exfil_endpoints": [
+        "api.telegram.org"
+      ],
+      "download_file_extensions": [],
+      "rules": {
+        "P1": "not_matched",
+        "P2": "matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P2"
+      ],
+      "verdict": "DANGEROUS",
+      "source": "brand_dom_phishing",
+      "expected_rules": {
+        "P2": "matched"
+      },
+      "expected_verdict": "DANGEROUS",
+      "passed": true
+    },
+    {
+      "id": "H2",
+      "scenario": "Login BCA, domain lama, tujuan skrip tidak terlihat",
+      "url": "https://portal-lama.test/masuk",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 9446,
+      "claimed_brand": "BCA",
+      "official_domain_match": false,
+      "self_reference_conflict": null,
+      "host_brand_claim": "unknown",
+      "has_password_field": true,
+      "form_cross_domain": "unknown",
+      "credential_exfil_endpoints": [],
+      "download_file_extensions": [],
+      "rules": {
+        "P1": "not_matched",
+        "P2": "undetermined",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [],
+      "verdict": "DANGEROUS",
+      "source": "url_model",
+      "expected_rules": {
+        "P2": "undetermined"
+      },
+      "expected_verdict": null,
+      "passed": true
+    },
+    {
+      "id": "H3",
+      "scenario": "Domain baru, tampil BCA, tautan .zip",
+      "url": "https://unduh-baru.test/aplikasi",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand": "BCA",
+      "official_domain_match": false,
+      "self_reference_conflict": null,
+      "host_brand_claim": "unknown",
+      "has_password_field": false,
+      "form_cross_domain": false,
+      "credential_exfil_endpoints": [],
+      "download_file_extensions": [
+        "zip"
+      ],
+      "rules": {
+        "P1": "not_matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P4"
+      ],
+      "verdict": "DANGEROUS",
+      "source": "brand_dom_phishing",
+      "expected_rules": {
+        "P4": "matched"
+      },
+      "expected_verdict": "DANGEROUS",
+      "passed": true
+    },
+    {
+      "id": "H4",
+      "scenario": "Domain baru, tampil BCA, tautan .iso",
+      "url": "https://unduh-baru.test/installer",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand": "BCA",
+      "official_domain_match": false,
+      "self_reference_conflict": null,
+      "host_brand_claim": "unknown",
+      "has_password_field": false,
+      "form_cross_domain": false,
+      "credential_exfil_endpoints": [],
+      "download_file_extensions": [
+        "iso"
+      ],
+      "rules": {
+        "P1": "not_matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P4"
+      ],
+      "verdict": "DANGEROUS",
+      "source": "brand_dom_phishing",
+      "expected_rules": {
+        "P4": "matched"
+      },
+      "expected_verdict": "DANGEROUS",
+      "passed": true
+    },
+    {
+      "id": "H5",
+      "scenario": "Domain baru, tampil BCA, tautan .lnk",
+      "url": "https://unduh-baru.test/pintasan",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand": "BCA",
+      "official_domain_match": false,
+      "self_reference_conflict": null,
+      "host_brand_claim": "unknown",
+      "has_password_field": false,
+      "form_cross_domain": false,
+      "credential_exfil_endpoints": [],
+      "download_file_extensions": [
+        "lnk"
+      ],
+      "rules": {
+        "P1": "not_matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P4"
+      ],
+      "verdict": "DANGEROUS",
+      "source": "brand_dom_phishing",
+      "expected_rules": {
+        "P4": "matched"
+      },
+      "expected_verdict": "DANGEROUS",
+      "passed": true
+    },
+    {
+      "id": "H6",
+      "scenario": "Formulir pengguna di docs.google.com/forms meminta password",
+      "url": "https://docs.google.com/forms/d/e/SIMULASI/viewform",
+      "url_model": "SAFE",
+      "domain_age_days": 10650,
+      "claimed_brand": "Google",
+      "official_domain_match": "unknown",
+      "self_reference_conflict": "path_hosted_user_content",
+      "host_brand_claim": "exact",
+      "has_password_field": true,
+      "form_cross_domain": "unknown",
+      "credential_exfil_endpoints": [],
+      "download_file_extensions": [],
+      "rules": {
+        "P1": "undetermined",
+        "P2": "undetermined",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "undetermined"
+      },
+      "matched": [],
+      "verdict": "SAFE",
+      "source": "url_model",
+      "expected_rules": {
+        "L1": "not_matched",
+        "L2": "undetermined"
+      },
+      "expected_verdict": null,
+      "passed": true
+    },
+    {
+      "id": "H7",
+      "scenario": "Beranda docs.google.com (bukan konten pengguna)",
+      "url": "https://docs.google.com/",
+      "url_model": "SAFE",
+      "domain_age_days": 10650,
+      "claimed_brand": "Google",
+      "official_domain_match": true,
+      "self_reference_conflict": null,
+      "host_brand_claim": "exact",
+      "has_password_field": false,
+      "form_cross_domain": false,
+      "credential_exfil_endpoints": [],
+      "download_file_extensions": [],
+      "rules": {
+        "P1": "not_matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "L1"
+      ],
+      "verdict": "SAFE",
+      "source": "brand_dom_legitimate",
+      "expected_rules": {
+        "L1": "matched"
+      },
+      "expected_verdict": "SAFE",
+      "passed": true
+    },
+    {
+      "id": "H8",
+      "scenario": "Tiruan Shopee (shoppee) tanpa jawaban API brand",
+      "url": "https://shoppee.test/",
+      "url_model": "DANGEROUS",
+      "domain_age_days": 42,
+      "claimed_brand": "Shopee",
+      "official_domain_match": false,
+      "self_reference_conflict": null,
+      "host_brand_claim": "lookalike",
+      "has_password_field": false,
+      "form_cross_domain": false,
+      "credential_exfil_endpoints": [],
+      "download_file_extensions": [],
+      "rules": {
+        "P1": "matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1"
+      ],
+      "verdict": "DANGEROUS",
+      "source": "brand_dom_phishing",
+      "expected_rules": {
+        "P1": "matched"
+      },
+      "expected_verdict": "DANGEROUS",
+      "passed": true
+    }
+  ]
+}

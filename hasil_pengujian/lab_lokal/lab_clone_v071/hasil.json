@@ -1,0 +1,806 @@
+{
+  "generated_at_utc": "2026-11-12T07:46:16.848958+00:00",
+  "test_type": "controlled_local_clone_simulation",
+  "extension_name": "HeuriShield URL20 XGBoost v3",
+  "extension_version": "0.7.1",
+  "url_model_feature_set": "url20-whatwg-v3",
+  "url_model_sha256": "8d87a5c05a6d478b0d62252d5bc180e9f67889059689c2f4c0bbf26ef476127e",
+  "metadata_api_mocked": false,
+  "windows_hosts_modified": false,
+  "windows_certificate_store_modified": false,
+  "credentials_entered": false,
+  "cases": [
+    {
+      "id": "C01",
+      "brand_expected": "Instagram",
+      "url": "https://instagrm.example.com/login",
+      "http_status": 200,
+      "page": {
+        "title": "Instagram Login — SIMULASI PENGUJIAN HEURISHIELD",
+        "password_inputs": 1,
+        "forms": [
+          "https://form-receiver.example.net/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "SAFE",
+      "claimed_brand": "Instagram",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": true,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "instagram.com",
+        "host_brand_claim": "subdomain_lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": true,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 11413,
+      "rules": {
+        "P1": "matched",
+        "P2": "matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1",
+        "P2"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1",
+          "P2"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": true,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C02",
+      "brand_expected": "Instagram",
+      "url": "https://instagrm.example.com/login?mode=same-domain",
+      "http_status": 200,
+      "page": {
+        "title": "Instagram Login — SIMULASI PENGUJIAN HEURISHIELD",
+        "password_inputs": 1,
+        "forms": [
+          "https://instagrm.example.com/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Instagram",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": true,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "instagram.com",
+        "host_brand_claim": "subdomain_lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": false,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 11413,
+      "rules": {
+        "P1": "matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": false,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C03",
+      "brand_expected": "Instagram",
+      "url": "https://instgram.com/login",
+      "http_status": 200,
+      "page": {
+        "title": "Login . Instagram",
+        "password_inputs": 1,
+        "forms": [
+          "https://form-receiver.example.net/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Instagram",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": false,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "instagram.com",
+        "host_brand_claim": "lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": true,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 5847,
+      "rules": {
+        "P1": "matched",
+        "P2": "matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1",
+        "P2"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1",
+          "P2"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": true,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C04",
+      "brand_expected": "Instagram",
+      "url": "https://instgram.com/login?mode=same-domain",
+      "http_status": 200,
+      "page": {
+        "title": "Login . Instagram",
+        "password_inputs": 1,
+        "forms": [
+          "https://instgram.com/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Instagram",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": false,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "instagram.com",
+        "host_brand_claim": "lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": false,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 5847,
+      "rules": {
+        "P1": "matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": false,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C05",
+      "brand_expected": "Facebook",
+      "url": "https://facebok.com/login",
+      "http_status": 200,
+      "page": {
+        "title": "Facebook-login or sign up",
+        "password_inputs": 1,
+        "forms": [
+          "https://form-receiver.example.net/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Facebook",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": true,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "facebook.com",
+        "host_brand_claim": "lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": true,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 8239,
+      "rules": {
+        "P1": "matched",
+        "P2": "matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1",
+        "P2"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1",
+          "P2"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": true,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C06",
+      "brand_expected": "Facebook",
+      "url": "https://facebok.com/login?mode=same-domain",
+      "http_status": 200,
+      "page": {
+        "title": "Facebook-login or sign up",
+        "password_inputs": 1,
+        "forms": [
+          "https://facebok.com/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Facebook",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": true,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "facebook.com",
+        "host_brand_claim": "lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": false,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 8239,
+      "rules": {
+        "P1": "matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": false,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C07",
+      "brand_expected": "PayPal",
+      "url": "https://paypal.login.com/",
+      "http_status": 200,
+      "page": {
+        "title": "Login to your PayPal account",
+        "password_inputs": 1,
+        "forms": [
+          "https://form-receiver.example.net/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "SAFE",
+      "claimed_brand": "PayPal",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": false,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "paypal.com",
+        "host_brand_claim": "subdomain_exact",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": true,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 12162,
+      "rules": {
+        "P1": "matched",
+        "P2": "matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1",
+        "P2"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1",
+          "P2"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": true,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C08",
+      "brand_expected": "PayPal",
+      "url": "https://paypal.login.com/?mode=same-domain",
+      "http_status": 200,
+      "page": {
+        "title": "Login to your PayPal account",
+        "password_inputs": 1,
+        "forms": [
+          "https://paypal.login.com/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "SAFE",
+      "claimed_brand": "PayPal",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": false,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "paypal.com",
+        "host_brand_claim": "subdomain_exact",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": false,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 12162,
+      "rules": {
+        "P1": "matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": false,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C09",
+      "brand_expected": "Tokopedia",
+      "url": "https://t0kopedia.com/login",
+      "http_status": 200,
+      "page": {
+        "title": "Tokopedia - Masuk",
+        "password_inputs": 1,
+        "forms": [
+          "https://form-receiver.example.net/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Tokopedia",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": false,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "tokopedia.com",
+        "host_brand_claim": "lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": true,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 73,
+      "rules": {
+        "P1": "matched",
+        "P2": "matched",
+        "P3": "matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1",
+          "P2",
+          "P3"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": true,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C10",
+      "brand_expected": "Tokopedia",
+      "url": "https://t0kopedia.com/login?mode=same-domain",
+      "http_status": 200,
+      "page": {
+        "title": "Tokopedia - Masuk",
+        "password_inputs": 1,
+        "forms": [
+          "https://t0kopedia.com/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Tokopedia",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": false,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "tokopedia.com",
+        "host_brand_claim": "lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": false,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 73,
+      "rules": {
+        "P1": "matched",
+        "P2": "not_matched",
+        "P3": "matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1",
+        "P3"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1",
+          "P3"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": true,
+      "expected_cross_domain": false,
+      "password_read_ok": true,
+      "form_target_read_ok": true
+    },
+    {
+      "id": "C11",
+      "brand_expected": "Shopee",
+      "url": "https://shoopee.co.id/",
+      "http_status": 200,
+      "page": {
+        "title": "Shopee Indonesia | Belanja Online melalui Aplikasi dan Website",
+        "password_inputs": 3,
+        "forms": []
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Shopee",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": false,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "shopee.co.id",
+        "host_brand_claim": "lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": "unknown",
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 3369,
+      "rules": {
+        "P1": "matched",
+        "P2": "undetermined",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": null,
+      "expected_cross_domain": null,
+      "password_read_ok": null,
+      "form_target_read_ok": null
+    },
+    {
+      "id": "C12",
+      "brand_expected": "Shopee",
+      "url": "https://shoopee.co.id/login",
+      "http_status": 200,
+      "page": {
+        "title": "Shopee - Masuk",
+        "password_inputs": 3,
+        "forms": []
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Shopee",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": false,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "shopee.co.id",
+        "host_brand_claim": "lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": true,
+        "has_sensitive_input": false,
+        "form_cross_domain": "unknown",
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 3369,
+      "rules": {
+        "P1": "matched",
+        "P2": "undetermined",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": null,
+      "expected_cross_domain": null,
+      "password_read_ok": null,
+      "form_target_read_ok": null
+    },
+    {
+      "id": "C13",
+      "brand_expected": "Binance",
+      "url": "https://binannce.com/",
+      "http_status": 200,
+      "page": {
+        "title": "Binance-Cryptocurrency Exchange for Bitcoin,Ethereum & Altcoins",
+        "password_inputs": 0,
+        "forms": [
+          "https://form-receiver.example.net/submit"
+        ]
+      },
+      "analysis_ok": true,
+      "error": null,
+      "url_model_verdict": "DANGEROUS",
+      "claimed_brand": "Binance",
+      "brand": {
+        "brand_in_title": true,
+        "brand_in_heading": true,
+        "brand_in_logo": false,
+        "claimed_brand_status": "identified",
+        "verified_reference_domain": "binance.com",
+        "host_brand_claim": "lookalike",
+        "official_domain_match": false,
+        "brand_domain_mismatch": true
+      },
+      "dom": {
+        "has_password_field": false,
+        "has_sensitive_input": false,
+        "form_cross_domain": false,
+        "login_button_detected": true,
+        "has_download_link": false,
+        "download_file_extensions": []
+      },
+      "domain_age_days": 3355,
+      "rules": {
+        "P1": "matched",
+        "P2": "not_matched",
+        "P3": "not_matched",
+        "P4": "not_matched",
+        "L1": "not_matched",
+        "L2": "not_matched"
+      },
+      "matched": [
+        "P1"
+      ],
+      "decision": {
+        "verdict": "DANGEROUS",
+        "source": "brand_dom_phishing",
+        "reasons": [
+          "P1"
+        ]
+      },
+      "verdict": "DANGEROUS",
+      "blocked": true,
+      "expected_credential_form": false,
+      "expected_cross_domain": null,
+      "password_read_ok": true,
+      "form_target_read_ok": null
+    }
+  ],
+  "certificate_not_after": "2026-12-11T11:52:38+00:00",
+  "post_requests_observed": []
+}

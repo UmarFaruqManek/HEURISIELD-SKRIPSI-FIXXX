@@ -1,0 +1,169 @@
+{
+  "kind": "registry data validation and controlled brand-analysis regression; not a live accuracy evaluation",
+  "registry": {
+    "curated_names": 31,
+    "imported_names": 10000,
+    "distinct_names": 10031,
+    "lookup_keys": 12410
+  },
+  "total": 38,
+  "passed": 38,
+  "checks": [
+    {
+      "name": "10,031 distinct names, not 10,000 aliases",
+      "passed": true
+    },
+    {
+      "name": "All curated lookup keys and official domains preserved",
+      "passed": true
+    },
+    {
+      "name": "Claude official domain can correct a phishing classification",
+      "passed": true
+    },
+    {
+      "name": "Every imported name is searchable and remains untrusted",
+      "passed": true
+    },
+    {
+      "name": "Curated lookalike Tokopedia retains priority",
+      "passed": true
+    },
+    {
+      "name": "Ambiguous imported lookalikes do not select the first arbitrary brand",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: BCA",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: BNI",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: BRI",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: BRImo",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Livin' by Mandiri",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Bank Mandiri",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: OVO",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: GoPay",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Gojek",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Shopee",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Tokopedia",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Bukalapak",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Lazada",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Blibli",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Traveloka",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Telkomsel",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Claude",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: PayPal",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Instagram",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Facebook",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: WhatsApp",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Netflix",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Binance",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Coinbase",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: MetaMask",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Roblox",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Dropbox",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: DocuSign",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: LinkedIn",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Adobe",
+      "passed": true
+    },
+    {
+      "name": "Curated regression: Steam",
+      "passed": true
+    },
+    {
+      "name": "Imported reference alone cannot activate legitimate or phishing rules",
+      "passed": true
+    }
+  ],
+  "benchmark": {
+    "lookalike_queries": 1000,
+    "elapsed_ms": 38
+  }
+}
