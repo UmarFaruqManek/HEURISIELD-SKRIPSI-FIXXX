@@ -171,16 +171,54 @@ Lingkungan untuk membuka `model/xgboost_url20_v3.joblib`: Python dengan `xgboost
 
 Catatan: untuk sekitar 7,5% baris, kolom `url_length` dan `url_entropy` di CSV dihitung sebelum normalisasi WHATWG (selisih satu karakter, yaitu garis miring di akhir). Extension selalu menormalisasi URL sebelum menghitung fitur.
 
-## Privasi
+## API yang dipakai
 
-Extension memerlukan internet untuk dua hal:
+Semua layanan di bawah ini adalah **API publik yang dipanggil tanpa API key, token, atau login**. Repositori ini tidak menyimpan kredensial apa pun.
 
-| Keperluan | Layanan | Data yang dikirim |
+### Identitas brand
+
+| Layanan | Endpoint | Fungsi | Data yang dikirim |
+|---|---|---|---|
+| Clearbit Autocomplete | `https://autocomplete.clearbit.com/v1/companies/suggest?query={kata}` | Mencari kandidat brand (nama + domain resmi) | Satu kata dari judul halaman atau hostname |
+| Brandfetch Search | `https://api.brandfetch.io/v2/search/{kata}` | Kandidat brand pelengkap, sekaligus status `verified` | Satu kata dari judul halaman atau hostname |
+| API Brand-Domain HeuriShield | `https://brnad-heuri.vercel.app/api/v1/domain/{domain}` | Cadangan terakhir: nama brand pemilik suatu domain | Domain halaman |
+
+Kode: [`brand-search-api.js`](extension/HeuriShield-URL20-XGBoost/src/analyzer/brand/brand-search-api.js), [`brand-domain-api.js`](extension/HeuriShield-URL20-XGBoost/src/analyzer/brand/brand-domain-api.js).
+
+- Batas waktu: 7 detik (Clearbit/Brandfetch) dan 4,5 detik (Brand-Domain).
+- Paling banyak 4 permintaan berjalan bersamaan.
+- Bila layanan membalas HTTP 429/503, extension menunggu sesuai `Retry-After` sebelum mencoba lagi.
+- Hasil yang berhasil disimpan di cache lokal selama 24 jam.
+
+### Umur domain
+
+Layanan dicoba berurutan sampai salah satunya memberi tanggal registrasi.
+
+| Urutan | Layanan | Endpoint | Data yang dikirim |
+|---|---|---|---|
+| 1 | IANA RDAP Bootstrap | `https://data.iana.org/rdap/dns.json` | Tidak ada (hanya mengambil daftar server RDAP resmi per TLD) |
+| 2 | Server RDAP registri resmi | Dari daftar IANA, misalnya `https://rdap.verisign.com/com/v1/domain/{domain}` | Domain halaman |
+| 3 | WHOIS publik (cadangan) | `https://api-check-beryl-beta.vercel.app/api/whois?domain={domain}` | Domain halaman |
+| 4 | WHOIS publik (cadangan) | `https://whois-api-dun.vercel.app/api/whois?domain={domain}` | Domain halaman |
+| 5 | WHOIS publik (cadangan) | `https://who-dat.as93.net/{domain}` | Domain halaman |
+
+Kode: [`url18-age.js`](extension/HeuriShield-URL20-XGBoost/src/analyzer/domain/url18-age.js).
+
+- Batas waktu: 6,5 detik per layanan.
+- Hasil disimpan di cache selama 24 jam (5 menit bila semua layanan gagal).
+- Bila tidak ada layanan yang memberi tanggal, umur domain dicatat `unknown`.
+
+### Verifikasi tujuan form (satu situs)
+
+| Layanan | Endpoint | Fungsi |
 |---|---|---|
-| Identitas brand | Clearbit Autocomplete, Brandfetch, API Brand-Domain HeuriShield | Kata dari judul/hostname halaman dan domain yang dikunjungi |
-| Umur domain | Server RDAP resmi (via IANA), lalu tiga layanan WHOIS cadangan | Domain yang dikunjungi |
+| portal.merdekasiber.com | `https://portal.merdekasiber.com/_next/static/chunks/app/page-fdde07887ecc580b.js` | Hanya dipanggil saat membuka situs tersebut. Skrip login diunduh tanpa cookie, lalu dicocokkan dengan hash SHA-256 yang sudah ditinjau ([`login-form-destination.js`](extension/HeuriShield-URL20-XGBoost/src/analyzer/dom/login-form-destination.js)) |
 
-Karena itu, **domain setiap halaman yang dianalisis diketahui oleh layanan-layanan tersebut**. Isi kolom form dan cookie tidak dikirim. URL yang disimpan secara lokal dibersihkan dari token, sesi, dan parameter autentikasi.
+### Privasi
+
+Karena layanan di atas dipanggil untuk setiap halaman yang dianalisis, **domain halaman tersebut diketahui oleh layanan-layanan itu**. Yang **tidak** pernah dikirim: isi kolom form (kata sandi, OTP, nomor kartu), cookie, dan URL lengkap beserta parameternya. URL yang disimpan secara lokal juga dibersihkan dari token, sesi, dan parameter autentikasi.
+
+Model XGBoost, rule, dan daftar referensi (Public Suffix List, daftar TLD IANA, registri brand) dijalankan sepenuhnya di dalam browser, tanpa server.
 
 ## Keterbatasan
 
